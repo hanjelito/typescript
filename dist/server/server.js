@@ -15,7 +15,7 @@ class Server {
         this.app.use(express.static(publicPath));
     }
     start(callback) {
-        this.app.listen(this.port, () => { });
+        // this.app.listen(this.port, ()=>{});
         this.publicFolder();
     }
 }

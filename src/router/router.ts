@@ -1,7 +1,12 @@
 import {Router, Request, Response} from 'express';
+import path = require('path');
 import MylSQL from '../mysql/mysql';
 
 const router = Router();
+
+// router.get('/', (req: Request, res: Response)=>{
+//     res.sendFile(path.join(__dirname,'..', 'public', 'index.html'));
+// });
 
 router.get('/heroes', (req:Request, res: Response) => {
     

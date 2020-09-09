@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const mysql_1 = __importDefault(require("../mysql/mysql"));
 const router = express_1.Router();
+// router.get('/', (req: Request, res: Response)=>{
+//     res.sendFile(path.join(__dirname,'..', 'public', 'index.html'));
+// });
 router.get('/heroes', (req, res) => {
     const query = `
         SELECT *

@@ -1,15 +1,21 @@
 import Server from './server/server';
 import router from './router/router'
-import MylSQL from './mysql/mysql';
-
-const server = Server.init(3000);
-
-server.app.use(router);
-
-// const mysql = new MylSQL();
-// MylSQL.instance;
+// import MylSQL from './mysql/mysql';
+import socketIO  = require('socket.io');
+import http = require('http');
+//
+const expressServer = Server.init(3000);
+const server = http.createServer(expressServer.app);
 
 
-server.start(()=>{
+
+expressServer.app.use(router);
+
+//
+module.exports.io = socketIO(server);
+require('./server/socket/socket');
+
+server.listen(3000);
+expressServer.start(()=>{
     console.log('SErvidor corriendo en el puerto 3000');
 })
