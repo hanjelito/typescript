@@ -17,5 +17,5 @@ require('./server/socket/socket');
 
 server.listen(3000);
 expressServer.start(()=>{
-    console.log('SErvidor corriendo en el puerto 3000');
+    console.log('Servidor corriendo en el puerto 3000');
 })
